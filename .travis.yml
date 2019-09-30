@@ -8,7 +8,7 @@ deploy:
   provider: heroku
   api_key:
     secure: alah5bdmWISPyZlMZeSrY3WE06CFEw1b88d3l3h5HDaV6TZsT9yljbpOoj8o4XaBgPrdqM7mLIFUegcNet6A70+klPmdKok57LJnEYak1ZX3/kZkQOI6sGeYR3SYaLWaGvhEsIf5xt3X+pyUe/ogNr/qrALd1vissvMMnReDso7VE7HCGdR+6u4i7B/0KfLIWje1vNYFN+IufVrvadqXUF1ZbOiToMDqEArJ9+utEGafpcmwcoMLUIztPFka0Pwc8uCET3rQYWSM9BYHcI7H9DtLdpv4vyy09llx6lj11BDZl3v/AvtMme1Z//vNvSbV6OSI66MUIzUpUUoHUP1r2U5p+VfDpxc2JQYHKCKBkl0PdSh5zv5P7mYs5DX5g1ULvuFLlTcQE8bb2LXFbfNU3t8LPLjuuun2vlze+Wbzc+dgMGnBCOMGSYTHanlS4UrNIgJUIwUFObbAOWEJDWcjxMu6Tz7npT0AaGWP8jEbspCsZFBgDhgKrJ/xv0yy3ETGHITFxMNsy8njPa9yB/viI41WX7UnzYSSqT2sXtqS1U1GYOM3lBKbZMEu/F4DFkxIlBlTmJikp4GJxP9/YhRBLpX1cFYj5F+ZjWWYVEO1pl2LF/Hl1fL3fTj0R3ft2ndZpteXc97i0tfhn0ML6wpCFTtH6/HwM0H0Isf/Gow+IeU=
-  app: tv-series-tracker
+  app: tv-web-series-tracker
   on:
     repo: VOffoma/tv-series-tracker
     branch: develop
