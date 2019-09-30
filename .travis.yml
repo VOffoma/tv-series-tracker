@@ -4,3 +4,10 @@ node_js:
 cache:
   directories:
     - "node_modules"
+deploy:
+  provider: heroku
+  api_key:
+    secure: 7e495639-e82b-432d-9d56-5e48d6e74864
+  app: tv-web-series-tracker
+  on:
+    repo: VOffoma/tv-series-tracker
