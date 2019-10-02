@@ -4,6 +4,7 @@ import express from 'express';
 import './helpers/db';
 import indexRouter from './routes/index';
 import userRouter from './routes/user';
+import seriesRouter from './routes/series';
 
 dotenv.config();
 
@@ -14,6 +15,7 @@ app.use(bodyParser.json());
 
 app.use('/', indexRouter);
 app.use('/users', userRouter);
+app.use('/series', seriesRouter);
 
 // eslint-disable-next-line no-unused-vars
 app.use((req, res, next) => res.status(404).send('We think you are lost!'));
