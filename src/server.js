@@ -5,6 +5,7 @@ import './helpers/db';
 import indexRouter from './routes/index';
 import userRouter from './routes/user';
 import seriesRouter from './routes/series';
+import scheduler from './services/cronService/scheduler';
 
 dotenv.config();
 
@@ -29,6 +30,9 @@ app.use((err, req, res, next) => {
   return res.status(500).send({ error: err.message });
 });
 
+
 app.listen(process.env.PORT, () => {
   console.log('server is up and running');
 });
+
+scheduler.start();

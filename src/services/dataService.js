@@ -19,7 +19,6 @@ async function searchSeries(query) {
   const result = await getAsync(`search:${query}`);
   if (result) {
     const resultJSON = JSON.parse(result);
-    console.log('from cache');
     return resultJSON;
   }
   const response = await axios({
@@ -35,7 +34,6 @@ async function searchSeries(query) {
     },
   });
   const responseJSON = response.data;
-  console.log('from api');
   await setexAsync(`search:${query}`, 86400, JSON.stringify(responseJSON));
   return responseJSON;
 }
@@ -44,7 +42,6 @@ async function fetchSeries(showId) {
   const result = await getAsync(`series:${showId}`);
   if (result) {
     const resultJSON = JSON.parse(result);
-    console.log('from cache');
     return resultJSON;
   }
   const showUrl = `${showsEndpoint}${showId}`;
@@ -58,9 +55,9 @@ async function fetchSeries(showId) {
     },
   });
   const responseJSON = response.data;
-  console.log('from api');
   await setexAsync(`series:${showId}`, 86400, JSON.stringify(responseJSON));
   return responseJSON;
 }
+
 
 export default { searchSeries, fetchSeries };
