@@ -11,7 +11,7 @@ const userSchema = mongoose.Schema({
     type: String,
     required: [true, 'Please provide username'],
     match: [/^[a-zA-Z0-9._-]+$/, 'A valid username is made of letters, numbers and special characters like ., _, -'],
-    minlength: [6, 'Your username should be atleast 6 characters'],
+    minlength: [2, 'Your username should be atleast 6 characters'],
   },
   email: {
     type: String,
@@ -23,16 +23,16 @@ const userSchema = mongoose.Schema({
     required: [true, 'Please provide password'],
     minlength: [6, 'Your password should be atleast 6 characters'],
   },
+  favoriteShows: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Series' }],
 }, { timestamps: { createdAt: 'created_at' } });
 
 
-userSchema.pre('save', async function (next) {
+userSchema.pre('save', async function () {
   // hash password
   const user = this;
   if (user.isModified('password')) {
     user.password = await bcrypt.hash(user.password, 10);
   }
-  next();
 });
 
 userSchema.methods.comparePasswords = async function (newPassword) {
